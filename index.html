@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 AISC Conference | University of Louisiana at Lafayette</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: #CE181E;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section h1 {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .logo-section p {
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #CE181E 0%, #a01418 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .event-badge {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .event-details {
+            background-color: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .event-details h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+        }
+
+        .detail-item {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.05em;
+        }
+
+        .detail-item strong {
+            min-width: 100px;
+            margin-right: 10px;
+        }
+
+        /* Conference Chair Section */
+        .chair-section {
+            background-color: #f8f8f8;
+            padding: 60px 20px;
+            border-bottom: 4px solid #CE181E;
+        }
+
+        .chair-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .chair-photo-wrapper {
+            flex-shrink: 0;
+        }
+
+        .chair-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #CE181E;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .chair-content h3 {
+            color: #CE181E;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .chair-content h4 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .chair-title {
+            color: #666;
+            font-size: 1.05em;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .chair-quote {
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+            border-left: 4px solid #CE181E;
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .content-section h3 {
+            font-size: 2em;
+            color: #CE181E;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-bottom: 3px solid #CE181E;
+            padding-bottom: 10px;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Conference Image */
+        .conference-image {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            margin: 30px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Topics Grid */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .topic-card {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #CE181E;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(206, 24, 30, 0.15);
+        }
+
+        .topic-card h4 {
+            color: #CE181E;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        /* Speakers Grid */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .speaker-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(206, 24, 30, 0.15);
+        }
+
+        .speaker-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #CE181E 0%, #a01418 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .speaker-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 4px solid #CE181E;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .speaker-card h4 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .speaker-title {
+            color: #CE181E;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .speaker-bio {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Registration Section */
+        .registration-section {
+            background: linear-gradient(135deg, #CE181E 0%, #a01418 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin: 50px 0;
+            border-radius: 10px;
+        }
+
+        .registration-section h3 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: white;
+            border: none;
+        }
+
+        .registration-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #CE181E;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background-color: #f5f5f5;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #f8f8f8;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .contact-section h3 {
+            color: #CE181E;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05em;
+        }
+
+        .contact-item strong {
+            color: #CE181E;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-container p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-details {
+                text-align: center;
+            }
+
+            .detail-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .chair-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .chair-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .chair-quote {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <h1>University of Louisiana at Lafayette®</h1>
+                <p>Office of Research, Innovation, and Economic Development</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#speakers">Keynote</a></li>
+                    <li><a href="#plenary">Plenary</a></li>
+                    <li><a href="#topics">Topics</a></li>
+                    <li><a href="#registration">Register</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="event-badge">INTERNATIONAL CONFERENCE</div>
+            <h2>2026 AISC Conference</h2>
+            <p style="font-size: 1.3em; margin: 20px 0;">Advances in Interdisciplinary Statistics and Combinatorics</p>
+            
+            <div class="event-details">
+                <h3>Event Details</h3>
+                <div class="detail-item">
+                    <strong>Date:</strong>
+                    <span>Tentative Date: November 6-7, 2026</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Time:</strong>
+                    <span>Full Conference Schedule</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Location:</strong>
+                    <span>University of Louisiana at Lafayette Campus</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Host:</strong>
+                    <span>Office of Research, Innovation, and Economic Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conference Chair Section -->
+    <section class="chair-section">
+        <div class="container">
+            <div class="chair-container">
+                <div class="chair-photo-wrapper">
+                    <img src="Sat_gupta.jpeg" alt="Dr. Sat Gupta" class="chair-photo">
+                </div>
+                <div class="chair-content">
+                    <h3>Message from the Conference Chair</h3>
+                    <h4>Dr. Sat Gupta</h4>
+                    <p class="chair-title">Conference Chair, AISC 2026</p>
+                    <p class="chair-quote">
+                        Welcome to the 2026 Advances in Interdisciplinary Statistics and Combinatorics (AISC) 
+                        Conference at the University of Louisiana at Lafayette. After nearly two decades at UNC 
+                        Greensboro, I am honored to see AISC continue its legacy at UL Lafayette. This gathering 
+                        brings together leading researchers and emerging scholars to share innovative ideas and 
+                        foster collaborations. I look forward to seeing you in Lafayette for what promises to be 
+                        an exceptional conference.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Conference Image -->
+        <img src="https://cas.uncg.edu/wp-content/uploads/2021/09/AISC-conference-scaled-1-1024x819.jpg" 
+             alt="Conference attendees in conference hall" 
+             class="conference-image"
+             style="margin-top: 0; margin-bottom: 40px;">
+        
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <h3>About the Conference</h3>
+            <p>
+                The International Conference on Advances in Interdisciplinary Statistics and Combinatorics (AISC) 
+                is coming to the University of Louisiana at Lafayette® in 2026. This prestigious biennial event 
+                will feature private sessions covering a variety of contemporary topics in statistics and 
+                interdisciplinary research.
+            </p>
+            <p>
+                Dr. Sat Gupta of UNC Greensboro has been hosting this conference at UNC Greensboro since 2007. 
+                Under his leadership, AISC has become a well-known conference for statisticians and data scientists. 
+                With Dr. Gupta's retirement in 2025, UL Lafayette has decided to carry forward the AISC conferences 
+                at UL Lafayette, with the AISC 2026 tentatively scheduled for November 6-7, 2026.
+            </p>
+        </section>
+
+        <!-- Keynote Speakers Section -->
+        <section id="speakers" class="content-section">
+            <h3>Keynote Speakers</h3>
+            <p>
+                We are excited to announce our distinguished keynote speakers who will share their expertise and 
+                insights at the 2026 AISC Conference. Speaker announcements will be made in the coming months.
+            </p>
+            
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <img src="John-Stufken-keynotespeaker.jpg" alt="John Stufken" class="speaker-photo">
+                    <h4>John Stufken</h4>
+                    <p class="speaker-title">Professor, George Mason University</p>
+                    <p class="speaker-bio">John Stufken is an expert in experimental design and data science, known for his work on orthogonal arrays, crossover designs, and optimal design methods. He has authored influential books and held leadership roles at major universities and the NSF. Stufken is an Elected Fellow of the American Statistical Association and the Institute of Mathematical Statistics.</p>
+                </div>
+                
+                <div class="speaker-card">
+                    <img src="Karen-Kafadar.jpg" alt="Dr. Karen Kafadar" class="speaker-photo">
+                    <h4>Dr. Karen Kafadar</h4>
+                    <p class="speaker-title">Commonwealth Professor, University of Virginia</p>
+                    <p class="speaker-bio">Professor Kafadar is a leading expert in exploratory data analysis and robust methods. Her research focuses on uncertainty characterization in physical and biological sciences, earning awards from the CDC, ASA, and American Society for Quality.</p>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-placeholder">
+                        <span>TBA</span>
+                    </div>
+                    <h4>Keynote Speaker III</h4>
+                    <p class="speaker-title">To Be Announced</p>
+                    <p class="speaker-bio">Details coming soon</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plenary Speakers Section -->
+        <section id="plenary" class="content-section">
+            <h3>Plenary Speakers</h3>
+            <p>
+                Our distinguished plenary speakers will present cutting-edge research and insights across various 
+                areas of statistics and combinatorics. Speaker announcements will be made in the coming months.
+            </p>
+            
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-placeholder">
+                        <span>TBA</span>
+                    </div>
+                    <h4>Plenary Speaker I</h4>
+                    <p class="speaker-title">To Be Announced</p>
+                    <p class="speaker-bio">Details coming soon</p>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-placeholder">
+                        <span>TBA</span>
+                    </div>
+                    <h4>Plenary Speaker II</h4>
+                    <p class="speaker-title">To Be Announced</p>
+                    <p class="speaker-bio">Details coming soon</p>
+                </div>
+                
+                <div class="speaker-card">
+                    <div class="speaker-placeholder">
+                        <span>TBA</span>
+                    </div>
+                    <h4>Plenary Speaker III</h4>
+                    <p class="speaker-title">To Be Announced</p>
+                    <p class="speaker-bio">Details coming soon</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics Section -->
+        <section id="topics" class="content-section">
+            <h3>Conference Topics</h3>
+            <p>
+                The conference will feature special sessions covering a wide range of contemporary research areas:
+            </p>
+            
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h4>Statistical Methods</h4>
+                    <p>Causal Inference, Design of Experiments, Survey Sampling</p>
+                </div>
+                <div class="topic-card">
+                    <h4>Data Science & AI</h4>
+                    <p>Big Data, Data Science/Machine Learning, Deep Learning</p>
+                </div>
+                <div class="topic-card">
+                    <h4>Advanced Analytics</h4>
+                    <p>High Dimensional Data Analysis, Bayesian Statistics</p>
+                </div>
+                <div class="topic-card">
+                    <h4>Specialized Analysis</h4>
+                    <p>Time Series Forecasting, Topological Data Analysis</p>
+                </div>
+                <div class="topic-card">
+                    <h4>Applied Statistics</h4>
+                    <p>Functional Data Analysis, Distribution Theory</p>
+                </div>
+                <div class="topic-card">
+                    <h4>Domain Applications</h4>
+                    <p>Survival Analysis, Statistical Ecology, Statistical Consulting</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Focus Section -->
+        <section class="content-section">
+            <h3>Fostering Young Researchers</h3>
+            <p>
+                An important objective of the conference is to develop young researchers by providing opportunities 
+                to interact with established scholars in their respective fields. With this in mind, several sessions 
+                will focus on undergraduate research, creating a supportive environment for the next generation of 
+                statisticians and data scientists.
+            </p>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="registration" class="registration-section">
+            <h3>Registration Opening Soon</h3>
+            <p>
+                Registration details and the full conference schedule will be available soon. Check back regularly 
+                for updates on keynote speakers, session schedules, and registration information.
+            </p>
+            <a href="#" class="cta-button">Stay Updated</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h3>Contact Information</h3>
+            <p>For more information about the 2026 AISC Conference, please contact:</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Office:</strong>
+                    <span>Office of Research, Innovation, and Economic Development</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcced9cfd9ddcedfd4fcd0d3c9d5cfd5ddd2dd92d9d8c9">[email&#160;protected]</a></span>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong>
+                    <span>337-482-5811</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Address:</strong>
+                    <span>Martin Hall, Suite 338, Lafayette, Louisiana 70504</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p><strong>University of Louisiana at Lafayette®</strong></p>
+            <p>Office of Research, Innovation, and Economic Development</p>
+            <p>Martin Hall, Suite 338 | Lafayette, Louisiana 70504</p>
+            <p>Phone: 337-482-5811 | Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="23514650464251404b634f4c564a504a424d420d464756">[email&#160;protected]</a></p>
+            
+            <div class="footer-links">
+                <a href="https://louisiana.edu">UL Lafayette Home</a>
+                <a href="https://vpresearch.louisiana.edu">Research Office</a>
+                <a href="https://louisiana.edu/research-impact">Research & Impact</a>
+   
